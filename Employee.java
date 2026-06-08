@@ -35,7 +35,7 @@ public class Employee {
         this.age = age;
     }
 
-    private void setSalary(double salary){
+    public void setSalary(double salary){
         this.salary = salary;
     }
 
@@ -44,6 +44,13 @@ public class Employee {
     public String toString(){
         return name + " age: " + age + " and salary: " + salary;
     }
+
+    private static void printEmp(ArrayList<Employee> x){
+        for(Employee emp : x){
+            System.out.println(emp);
+        }
+    }
+
 
     public static void main(String[] args){
 
@@ -63,32 +70,25 @@ public class Employee {
 
         System.out.println("The full team size now is: " + team.size());
 
-        for(Employee emp : team){
-            System.out.println(emp);
-        }
+        printEmp(team);
+
         System.out.println("================================== sorted a to Z");
 
         team.sort(Comparator.comparing(Employee::getName));
+        printEmp(team);
 
-        for(Employee emp : team){
-            System.out.println(emp);
-        }
 
         System.out.println("================================== sorted by age, youngest");
 
         team.sort(Comparator.comparing(Employee::getAge));
+        printEmp(team);
 
-        for(Employee emp : team){
-            System.out.println(emp);
-        }
 
         System.out.println("================================== sorted by salary, highest");
 
         team.sort(Comparator.comparing(Employee::getSalary).reversed());
+        printEmp(team);
 
-        for(Employee emp : team){
-            System.out.println(emp);
-        }
 
     }
 }
