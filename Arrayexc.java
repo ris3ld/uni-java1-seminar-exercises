@@ -15,9 +15,9 @@ class Arrayexc {
                 max_weight = i;
             }
         }
-        System.out.println("Total weight is: " + total_weight);
-        System.out.println("Average weight is: " + (total_weight / weights.length));
-        System.out.println("Max weight is: " + max_weight);
+        System.out.println("Total weight: " + total_weight);
+        System.out.println("Average weight: " + (total_weight / weights.length));
+        System.out.println("Max weight: " + max_weight);
         Arrays.sort(weights);
 
         for(int i : weights){
